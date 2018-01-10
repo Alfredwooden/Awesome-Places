@@ -12,6 +12,7 @@ import { AddPlacePage } from '../pages/add-place/add-place';
 import { PlacePage } from '../pages/place/place';
 import { SetLocationPage } from '../pages/set-location/set-location';
 import { AgmCoreModule } from '@agm/core'; 
+import { PlacesService } from '../service/places';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { AgmCoreModule } from '@agm/core';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Geolocation,
-    Camera
+    Camera,
+    PlacesService
   ]
 })
 export class AppModule {}

@@ -25682,6 +25682,10 @@ page-add-place agm-map {
   height: 250px;
 }
 
+page-place agm-map {
+  height: 250px;
+}
+
 page-set-location agm-map {
   height: 250px;
 }

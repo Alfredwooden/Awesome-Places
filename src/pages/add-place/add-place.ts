@@ -6,6 +6,7 @@ import { ModalController, ToastController, LoadingController } from 'ionic-angul
 
 import { SetLocationPage } from "../set-location/set-location";
 import { Location } from '../../models/location';
+import { PlacesService } from '../../service/places';
 
 @Component({
   selector: 'page-add-place',
@@ -22,10 +23,17 @@ export class AddPlacePage {
 
   constructor (private modalCtrl: ModalController, private geolocation: Geolocation,
               private loadingCtrl: LoadingController, private toastCtrl: ToastController,
-              private camera: Camera) {}
+              private camera: Camera, private placesService: PlacesService) {}
 
   onSubmit(form: NgForm) {
-    console.log(form.value);
+    this.placesService.addPlace(form.value.title, form.value.description, this.location, this.imageUrl);
+    form.reset();
+    this.location = {
+      lat: -31.42300527468759,
+      lng: -64.17864203453064
+    };
+    this.imageUrl = '';
+    this.locationIsSet = false;
   }
 
   onOpenMap() {
