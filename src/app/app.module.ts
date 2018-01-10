@@ -3,17 +3,20 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { Geolocation } from '@ionic-native/geolocation';
+import { Camera } from '@ionic-native/camera';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AddPlacePage } from '../pages/add-place/add-place';
 import { PlacePage } from '../pages/place/place';
 import { SetLocationPage } from '../pages/set-location/set-location';
-import { AgmCoreModule } from 'angular2-google-maps/core';
+import { AgmCoreModule } from '@agm/core'; 
+
 
 @NgModule({
   declarations: [
-    MyApp,
+    MyApp,  
     HomePage,
     AddPlacePage, 
     PlacePage,
@@ -24,7 +27,7 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyD_Amt65U5xuz4NGzf7yGn2fdAg06xBkeE',
+      apiKey: 'AIzaSyDORlv6CZ5_6pyNpbcA1DTG-IwJJhDewEk',
     })
   ],
   bootstrap: [IonicApp],
@@ -39,7 +42,9 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    Geolocation,
+    Camera
   ]
 })
 export class AppModule {}

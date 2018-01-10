@@ -1,0 +1,4 @@
+#Wed Jan 10 15:10:21 ART 2018
+base.0=C\:\\Users\\lucianodg\\Desktop\\Ionic - Angular\\Awesome Places\\Awesome-Places\\platforms\\android\\app\\build\\intermediates\\transforms\\dex\\release\\0
+renamed.0=classes.dex
+file.0=C\:\\Users\\lucianodg\\Desktop\\Ionic - Angular\\Awesome Places\\Awesome-Places\\platforms\\android\\app\\build\\intermediates\\transforms\\dex\\release\\0\\classes.dex
