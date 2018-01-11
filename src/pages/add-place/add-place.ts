@@ -14,7 +14,7 @@ declare var cordova: any;
 @Component({
   selector: 'page-add-place',
   templateUrl: 'add-place.html',
-})
+})  
 export class AddPlacePage {
   location: Location = {
     lat: -31.42300527468759,
@@ -87,7 +87,8 @@ export class AddPlacePage {
       imageData => {
         const currentName = imageData.replace(/^.*[\\\/]/, '');
         const path = imageData.replace(/[^\/]*$/, '');
-        this.file.moveFile(path, currentName, cordova.file.dataDirectory, currentName) 
+        const newFileName = new Date().getUTCMilliseconds() + '.jpg';
+        this.file.moveFile(path, currentName, cordova.file.dataDirectory, newFileName) 
           .then(
             (data: Entry) => {
               this.imageUrl = data.nativeURL;
